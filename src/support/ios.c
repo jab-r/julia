@@ -648,9 +648,9 @@ int ios_flush(ios_t *s)
     return 0;
 }
 
-void ios_close(ios_t *s)
+int ios_close(ios_t *s)
 {
-    ios_flush(s);
+    int err = ios_flush(s);
     if (s->fd != -1 && s->ownfd)
         close(s->fd);
     s->fd = -1;
@@ -659,6 +659,7 @@ void ios_close(ios_t *s)
     }
     s->buf = NULL;
     s->size = s->maxsize = s->bpos = 0;
+    return err;
 }
 
 int ios_isopen(ios_t *s)
