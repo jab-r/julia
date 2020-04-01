@@ -18,6 +18,8 @@ Documentation:
 [codecov-img]: https://img.shields.io/codecov/c/github/JuliaLang/julia/master.svg?label=codecov
 [docs-img]: https://img.shields.io/badge/docs-v1-blue.svg
 
+This version changes the memory allocation to enable multiple remote heaps (memory mapped)
+
 ## The Julia Language
 
 Julia is a high-level, high-performance dynamic language for technical
